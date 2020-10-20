@@ -37,6 +37,19 @@ do {
     }
 } while (i++ < 1);   
 
+// third cycle of task
+// let i = 0;
+// while (i++ < 2) {
+//     const latestSeenFilmsByUser = prompt('Один из последних просмотренных фильмов?', ''),
+//           markOfFilm = +prompt('На сколько оцените его?', '');
+
+//     if (latestSeenFilmsByUser != null && markOfFilm != null && latestSeenFilmsByUser != '' && markOfFilm != '' && latestSeenFilmsByUser.length < 50) {
+//             personalMovieDB.movies[latestSeenFilmsByUser] = markOfFilm;
+//     } else {
+//         i--;
+//     }
+// }
+
 if (personalMovieDB.count < 10) {
     alert("Просмотрено довольно мало фильмов");
 } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
