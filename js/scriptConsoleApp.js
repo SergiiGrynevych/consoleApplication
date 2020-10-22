@@ -86,27 +86,26 @@ function showMyDB(hidden) {
 
 showMyDB(personalMovieDB.privat);
 
-// FIRST POSSIBLE VARIANT
-function writeYourGenres(genresOfFilms) {
-    for (let i = 1; i <= 3; i += 1){
-        genresOfFilms[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-    }
-}
-
-writeYourGenres(personalMovieDB.genres);
-
-// SECOND POSSIBLE VARIANT
-// function writeYourGenres() {
+// FIRST POSSIBLE VARIANT // but no 
+// function writeYourGenres(genresOfFilms) {
 //     for (let i = 1; i <= 3; i += 1){
-//         const yourGenres = prompt(`Ваш любимый жанр под номером ${i}`);
-
-//     if (yourGenres != null && yourGenres != '') {
-//         personalMovieDB.genres.push(yourGenres);
-//         } else {
-//             i--;
-//         }
+//         genresOfFilms[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
 //     }
 // }
-// writeYourGenres();
+// writeYourGenres(personalMovieDB.genres);
+
+// SECOND POSSIBLE VARIANT
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i += 1){
+        const yourGenres = prompt(`Ваш любимый жанр под номером ${i}`);
+
+    if (yourGenres != null && yourGenres != '') {
+        personalMovieDB.genres.push(yourGenres);
+        } else {
+            i--;
+        }
+    }
+}
+writeYourGenres();
 
 console.log(personalMovieDB);
