@@ -7,17 +7,17 @@ const personalMovieDB = {
     genres: [],
     privat: false,
     start: function () {
-        this.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        this.count = Number(prompt('Сколько фильмов вы уже посмотрели?', ''));
 
         while (this.count == '' || this.count == null || isNaN(this.count)) {
-            this.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+            this.count = Number(prompt('Сколько фильмов вы уже посмотрели?', ''));
         }
     },
     rememberMyFilms: function () {
         for (let i = 0; i < 2; i += 1) {
         
             const latestSeenFilmsByUser = prompt('Один из последних просмотренных фильмов?', ''),
-                markOfFilm = +prompt('На сколько оцените его?', '');
+                markOfFilm = Number(prompt('На сколько оцените его?', ''));
 
             if (latestSeenFilmsByUser != null && markOfFilm != null && latestSeenFilmsByUser != '' && markOfFilm != '' && latestSeenFilmsByUser.length < 50 && !isNaN(markOfFilm)) {
                 personalMovieDB.movies[latestSeenFilmsByUser] = markOfFilm;
