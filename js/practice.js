@@ -65,3 +65,55 @@ copyObject.d.x = 155;
 console.log(copyObject);
 console.log(object);
 
+const soldier = {
+    health: 100,
+    armour: 50
+};
+
+const mex = {};
+
+Object.setPrototypeOf(mex, soldier);
+mex.armor = 500;
+console.log(mex);
+
+
+
+const findBestEmployee = function (employees) {
+  'use strict';
+  // Write code under this line
+    let bestEmployee = 0;
+    for (let employee in employees) {
+        // console.log(employees[employee]);
+        if (employees[employee] > bestEmployee) {
+            bestEmployee = employees[employee];
+        }
+    }
+    return bestEmployee;
+};
+
+const countTotalSalary = function(employees) {
+  'use strict';
+  // Write code under this line
+  let totalSalary = 0;
+  for(let key of employees){
+      totalSalary += employees[key]
+  }
+  return totalSalary;
+};
+
+// Объекты и ожидаемый результат
+const developers = {
+    mango: 300,
+    poly: 250,
+    alfred: 450,
+};
+console.log(countTotalSalary(developers));
+// 1000
+
+const supports = {
+  kiwi: 200,
+  lux: 150,
+  chelsy: 150,
+}
+console.log(countTotalSalary(supports));
+// 500
