@@ -74,3 +74,4 @@
 // Object.setPrototypeOf(mex, soldier);
 // mex.armor = 500;
 // console.log(mex);
+
