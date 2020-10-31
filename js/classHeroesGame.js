@@ -1,74 +1,3 @@
-// // Наследование
-// // extends
-// // super
-
-// class Hero{
-//     constructor({name = 'hero', xp = 0} = {}) {
-//         this.name = name;
-//         this.xp = xp;
-//     }
-
-//     gainXp(amount) {
-//         console.log(`${this.name} получает ${this.xp} опыта`);
-//         this.xp += amount;
-//     }
-// }
-
-// class Warrior extends Hero{
-//     constructor(config) {
-//         super(config);
-
-//         this.weapon = config.weapon;
-//     }
-//     attack() {
-//         console.log(`${this.name} атакует используя ${this.weapon}`);
-//     }
-// }
-
-// class Mage extends Hero{
-//     constructor(config) {
-//         super(config);
-
-//         this.spells = config.spells;
-//     }
-
-//     cast() {
-//         console.log(`${this.name} кастует ${this.spells}`);
-//     }
-
-//     npcAttack(npc, health) {
-//         console.log(`Вы встретили ${npc}, он сильно агрессивно настроен и прыгает на Вас`);
-//         this.cast();
-//         let healthOfNpc = health;
-//         // let randomDamage = 0;
-//         // let healthOfNpcAfteAttack = 0; // = healthOfNpc -= randomDamage;
-//         // let summOfDamage = 0;
-//         const damageNpc = function (min, max) {
-//             const randomDamage = Math.round(Math.random() * (max - min) + min);
-//             console.log(`Вы нанесли ${randomDamage} урона, у ${npc} осталось ${healthOfNpc} жизней`);
-//             healthOfNpc -= randomDamage;
-//             return healthOfNpc;
-//         };
-//         damageNpc(1, 99);
-//         console.log(healthOfNpc);
-//     }
-
-
-
-// }
-
-
-// const mango = new Warrior({ name: 'Mango', xp: 1000, weapon: 'алебарда' });
-// console.log(mango);
-
-// mango.attack();
-// mango.gainXp(1000);
-
-// const superMage = new Mage({ name: 'Gengalf', xp: 500, spells: 'огненный шар' });
-// superMage.npcAttack('гоблин', 250);
-// // superMage.cast();
-// superMage.gainXp(500);
-
 class Hero{
     constructor({name = 'hero', xp = 0} = {}) {
         this.name = name;
@@ -95,6 +24,7 @@ class Mage extends Hero{
         //     const rand = Math.floor(Math.random() * arr.length);
         //     return arr[rand];
         // };
+        this.indexOfSpell = Number(prompt(`Какое заклинание выберешь для атаки? ${objDB.battleWithNpc. spellsForCharacterToUse}`)) - 1;
         alert(`${this.name} кастует ${this.spells[objDB.indexOfSpell]}`);
     }
 
@@ -190,7 +120,8 @@ const objDB = {
             const spellsForCharacterToUse = superMage.spells.map(function (spell, i) {
                 return ` ${ i + 1} : ${spell}`;
             });
-            this.indexOfSpell = Number(prompt(`Какое заклинание выберешь для атаки? ${spellsForCharacterToUse}`)) - 1;
+            superMage.cast();
+
 
             // console.log(`${superMage.cast()}`);
         } else {
@@ -200,7 +131,7 @@ const objDB = {
             const spellsForCharacterToUse = superMage.spells.map(function (spell, i) {
                 return ` ${ i + 1} : ${spell}`;
             });
-            this.indexOfSpell = Number(prompt(`Какое заклинание выберешь для атаки? ${spellsForCharacterToUse}`)) - 1;
+            superMage.cast();
         }
     },
     endGame: function () {
